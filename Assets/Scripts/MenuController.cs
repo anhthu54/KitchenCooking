@@ -10,6 +10,10 @@ public class MenuController : MonoBehaviour
     Animator leftAnim;
     Animator rightAnim;
 
+    void Awake(){
+        Time.timeScale = 1f;
+    }
+
     void Start(){
         leftAnim = left.GetComponent<Animator>();
         rightAnim = right.GetComponent<Animator>();

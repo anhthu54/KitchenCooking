@@ -2,22 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GamePauseUI : MonoBehaviour {
 
 
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button optionsButton;
+    [SerializeField] private Button mainMenuButton;
 
     private void Awake() {
         resumeButton.onClick.AddListener(() => {
             KitchenGameManager.Instance.TogglePauseGame();
         });
 
-        /********* main menu
-
-
-        ***********/
+        mainMenuButton.onClick.AddListener(() => {
+            SceneManager.LoadScene("StartScene");
+        });
 
         optionsButton.onClick.AddListener(() => {
             Hide();
